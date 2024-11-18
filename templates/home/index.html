@@ -1,0 +1,505 @@
+{% extends 'home/main.html' %} {% load static %} {% block content %}
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-5">
+    <div class="owl-carousel header-carousel position-relative">
+        {% for c in home_carusel %}
+        <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="{{c.bg_img.url}}" alt="" />
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, 0.7)">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-sm-10 col-lg-8">
+                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown">
+                                {{c.min_content}}
+                            </h5>
+                            <h1 class="display-3 text-white animated slideInDown">
+                                {{c.title}}
+                            </h1>
+                            <p class="fs-5 text-white mb-4 pb-2">
+                                {{c.sub_title}}
+                            </p>
+                            <a href="{{c.bt1_url}}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                {{c.bt1_name}}</a
+              >
+              <a
+                href="{{c.btn2_url}}"
+                class="btn btn-light py-md-3 px-md-5 animated slideInRight"
+                >{{c.btn2_name}}</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-- Carousel End -->
+
+<!-- Service Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-4">
+      {% for c in service_start %}
+      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="service-item text-center pt-3">
+          <div class="p-4">
+            {{c.icon|safe}}
+            <h5 class="mb-3">{{c.name}}</h5>
+            <p>{{c.content}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- Service End -->
+
+<!-- About Start -->
+{% for c in about_start %}
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div
+        class="col-lg-6 wow fadeInUp"
+        data-wow-delay="0.1s"
+        style="min-height: 400px"
+      >
+        <div class="position-relative h-100">
+          <img
+            class="img-fluid position-absolute w-100 h-100"
+            src="{{c.image.url}}"
+            alt=""
+            style="object-fit: cover"
+          />
+        </div>
+      </div>
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+        <h6 class="section-title bg-white text-start text-primary pe-3">
+          {{c.min_content}}
+        </h6>
+        <h1 class="mb-4">{{c.title}}</h1>
+        <p class="mb-4">
+          {{ c.content }}
+        </p>
+        <p class="mb-4"></p>
+        <div class="row gy-2 gx-4 mb-4">
+          <div class="col-sm-6">
+            <p class="mb-0">
+              <i class="fa fa-arrow-right text-primary me-2"></i>Malakali
+              murabbiylar
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0">
+              <i class="fa fa-arrow-right text-primary me-2"></i> Onlayn darslar
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0">
+              <i class="fa fa-arrow-right text-primary me-2"></i>Xalqaro
+              sertifikatlar
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0">
+              <i class="fa fa-arrow-right text-primary me-2"></i>Milliy
+              sertifikatlar
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0">
+              <i class="fa fa-arrow-right text-primary me-2"></i>Online
+              konsultatsiyalar
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-0">
+              <i class="fa fa-arrow-right text-primary me-2"></i>Online kitoblar
+            </p>
+          </div>
+        </div>
+        <a class="btn btn-primary py-3 px-5 mt-2" href="">Ko'proq o'qish</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+            <!-- About End -->
+
+            <!-- Categories Start -->
+            <div class="container-xxl py-5 category">
+                <div class="container">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h6 class="section-title bg-white text-center text-primary px-3">
+                            Kategoriyalar
+                        </h6>
+                        <h1 class="mb-5">Kurslar toifalari</h1>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-lg-7 col-md-6">
+                            <div class="row g-3">
+                                <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                                    <a class="position-relative d-block overflow-hidden" href="">
+                                        <img class="img-fluid" src="{% static 'img/cat-1.jpg' %}" alt="" />
+                                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px">
+                                            <h5 class="m-0">Web Dizayn</h5>
+                                            <small class="text-primary">49 Kurslar</small>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                                    <a class="position-relative d-block overflow-hidden" href="">
+                                        <img class="img-fluid" src="{% static 'img/cat-2.jpg' %}" alt="" />
+                                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px">
+                                            <h5 class="m-0">Grafik Dizayn</h5>
+                                            <small class="text-primary">49 Kurslar</small>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                                    <a class="position-relative d-block overflow-hidden" href="">
+                                        <img class="img-fluid" src="{% static 'img/cat-3.jpg' %}" alt="" />
+                                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px">
+                                            <h5 class="m-0">Video Montaj</h5>
+                                            <small class="text-primary">49 Kurslar</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px">
+                            <a class="position-relative d-block h-100 overflow-hidden" href="">
+                                <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover" />
+                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px">
+                                    <h5 class="m-0">Online Marketing</h5>
+                                    <small class="text-primary">49 Kurslar</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Categories Start -->
+
+            <!-- Courses Start -->
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h6 class="section-title bg-white text-center text-primary px-3">
+                            Kurslar
+                        </h6>
+                        <h1 class="mb-5">Mashhur kurslar</h1>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="course-item bg-light">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid" src="{% static 'img/course-1.jpg' %}" alt="" />
+                                    <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                        <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px">Ko'proq</a
+              >
+              <a
+                href="#"
+                class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                style="border-radius: 0 30px 30px 0"
+                >Hoziroq qo'shil</a
+              >
+            </div>
+          </div>
+          <div class="text-center p-4 pb-0">
+            <h3 class="mb-0">500 000</h3>
+            <div class="mb-3">
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small>(123)</small>
+            </div>
+            <h5 class="mb-4">
+              Yangi boshlanuvchilar uchun veb-dizayn va ishlab chiqish kursi
+            </h5>
+          </div>
+          <div class="d-flex border-top">
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-user-tie text-primary me-2"></i>Axmedova</small
+            >
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-clock text-primary me-2"></i>13:00</small
+            >
+            <small class="flex-fill text-center py-2"
+              ><i class="fa fa-user text-primary me-2"></i>30 O'quvchilar</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="course-item bg-light">
+          <div class="position-relative overflow-hidden">
+            <img
+              class="img-fluid"
+              src="{% static 'img/course-2.jpg' %}"
+              alt=""
+            />
+            <div
+              class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
+            >
+              <a
+                href="#"
+                class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
+                style="border-radius: 30px 0 0 30px"
+                >Ko'proq</a
+              >
+              <a
+                href="#"
+                class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                style="border-radius: 0 30px 30px 0"
+                >Hoziroq qo'shil</a
+              >
+            </div>
+          </div>
+          <div class="text-center p-4 pb-0">
+            <h3 class="mb-0">500 000</h3>
+            <div class="mb-3">
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small>(123)</small>
+            </div>
+            <h5 class="mb-4">Yangi boshlanuvchilar uchun Python kursi</h5>
+          </div>
+          <div class="d-flex border-top">
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-user-tie text-primary me-2"></i>Kobilov</small
+            >
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-clock text-primary me-2"></i>15:00</small
+            >
+            <small class="flex-fill text-center py-2"
+              ><i class="fa fa-user text-primary me-2"></i>30 O'quvchilar</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="course-item bg-light">
+          <div class="position-relative overflow-hidden">
+            <img
+              class="img-fluid"
+              src="{% static 'img/course-3.jpg' %}"
+              alt=""
+            />
+            <div
+              class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
+            >
+              <a
+                href="#"
+                class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
+                style="border-radius: 30px 0 0 30px"
+                >Ko'proq</a
+              >
+              <a
+                href="#"
+                class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                style="border-radius: 0 30px 30px 0"
+                >Hoziroq qo'shil</a
+              >
+            </div>
+          </div>
+          <div class="text-center p-4 pb-0">
+            <h3 class="mb-0">500 000</h3>
+            <div class="mb-3">
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small class="fa fa-star text-primary"></small>
+              <small>(123)</small>
+            </div>
+            <h5 class="mb-4">
+              Yangi boshlanuvchilar uchun Grafik Dizayn kursi
+            </h5>
+          </div>
+          <div class="d-flex border-top">
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-user-tie text-primary me-2"></i>Rakhimova</small
+            >
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-clock text-primary me-2"></i>17:00</small
+            >
+            <small class="flex-fill text-center py-2"
+              ><i class="fa fa-user text-primary me-2"></i>30 o'quvchilar</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Courses End -->
+
+<!-- Team Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">
+        Instruktorlar
+      </h6>
+      <h1 class="mb-5">Mutaxassis murabbiylar</h1>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="team-item bg-light">
+          <div class="overflow-hidden">
+            <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="" />
+          </div>
+          <div
+            class="position-relative d-flex justify-content-center"
+            style="margin-top: -23px"
+          >
+            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+              <a class="btn btn-sm-square btn-primary mx-1" href=""
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i
+              ></a>
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i
+              ></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-4">
+                                    <h5 class="mb-0">Kobilov</h5>
+                                    <small>Mutaxassis</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="team-item bg-light">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="" />
+                                </div>
+                                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px">
+                                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i
+              ></a>
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i
+              ></a>
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i
+              ></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-4">
+                                    <h5 class="mb-0">Akhmedova</h5>
+                                    <small>Dizayner</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="team-item bg-light">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="" />
+                                </div>
+                                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px">
+                                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i
+              ></a>
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i
+              ></a>
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i
+              ></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-4">
+                                    <h5 class="mb-0">Xushnazarov</h5>
+                                    <small>Coder</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                            <div class="team-item bg-light">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="" />
+                                </div>
+                                <div class="position-relative d-flex justify-content-center" style="margin-top: -23px">
+                                    <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i
+              ></a>
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i
+              ></a>
+                                        <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i
+              ></a>
+                                    </div>
+                                </div>
+                                <div class="text-center p-4">
+                                    <h5 class="mb-0">Sirocheva</h5>
+                                    <small>Mutaxassis</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Team End -->
+
+            <!-- Testimonial Start -->
+            <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container">
+                    <div class="text-center">
+                        <h6 class="section-title bg-white text-center text-primary px-3">
+                            Diqqat tanishing!
+                        </h6>
+                        <h1 class="mb-5">Talabalarimiz aytadilar!</h1>
+                    </div>
+                    <div class="owl-carousel testimonial-carousel position-relative">
+                        <div class="testimonial-item text-center">
+                            <img class="border rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-1.jpg' %}" style="width: 80px; height: 80px" />
+                            <h5 class="mb-0">Akramova</h5>
+                            <p>Kasb-hunar</p>
+                            <div class="testimonial-text bg-light text-center p-4">
+                                <p class="mb-0">
+                                    Men bu kursni tanlab adashmadim! O'z yo'limni topishimda Teacher-G yordam berdi!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <img class="border rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-2.jpg' %}" style="width: 80px; height: 80px" />
+                            <h5 class="mb-0">Zafarov</h5>
+                            <p>O'quvchi</p>
+                            <div class="testimonial-text bg-light text-center p-4">
+                                <p class="mb-0">
+                                    Men bu kursni tanlab adashmadim! O'z yo'limni topishimda Teacher-G yordam berdi!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <img class="border rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-3.jpg' %}" style="width: 80px; height: 80px" />
+                            <h5 class="mb-0">Ismatov</h5>
+                            <p>Oliy ta'lim</p>
+                            <div class="testimonial-text bg-light text-center p-4">
+                                <p class="mb-0">
+                                    Men bu kursni tanlab adashmadim! O'z yo'limni topishimda Teacher-G yordam berdi!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <img class="border rounded-circle p-2 mx-auto mb-3" src="{% static 'img/testimonial-4.jpg' %}" style="width: 80px; height: 80px" />
+                            <h5 class="mb-0">Ismatova</h5>
+                            <p>O'quvchi</p>
+                            <div class="testimonial-text bg-light text-center p-4">
+                                <p class="mb-0">
+                                    Men bu kursni tanlab adashmadim! O'z yo'limni topishimda Teacher-G yordam berdi!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial End -->
+
+            {% endblock %}
